@@ -1,8 +1,15 @@
 # Usage
 
-Install docker:
+Install docker for containerisation:
 ```
 $ snap install docker
+```
+
+Install nginx:
+```
+$ sudo apt update
+$ sudo apt install nginx
+$ systemctl status nginx
 ```
 
 Change the folder permission to make sure that the container is able to access the directory:
@@ -14,6 +21,21 @@ $ sudo chmod -R 777 etc
 Start the container:
 ```
 $ docker-compose up
+```
+
+Nginx config :
+- Duplicate default in /etc/nginx/sites-available
+```
+$ cp /etc/nginx/sites-available/default /etc/nginx/sites-available/odoo11
+```
+- Proxy pass setup
+- Make symlink to sites-enabled
+```
+$ ln -s /etc/nginx/sites-available/odoo11 /etc/nginx/sites-enabled/
+```
+- Restart Nginx
+```
+$ sudo systemctl restart nginx
 ```
 
 * Then locate `localhost:8070` to access Odoo 11.0. If you want to start the server with a different port, change **8070** to another value:
