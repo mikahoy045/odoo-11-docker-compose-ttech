@@ -23,7 +23,7 @@ Start the container:
 $ docker-compose up
 ```
 
-Nginx config :
+# Nginx config
 - Duplicate default in /etc/nginx/sites-available
 ```
 $ cp /etc/nginx/sites-available/default /etc/nginx/sites-available/odoo11
@@ -38,6 +38,7 @@ $ ln -s /etc/nginx/sites-available/odoo11 /etc/nginx/sites-enabled/
 $ sudo systemctl restart nginx
 ```
 
+# Odoo Config
 * Then locate `localhost:8070` to access Odoo 11.0. If you want to start the server with a different port, change **8070** to another value:
 
 ```
