@@ -1,5 +1,10 @@
 # Usage
 
+Install docker:
+```
+$ snap install docker
+```
+
 Change the folder permission to make sure that the container is able to access the directory:
 ```
 $ sudo chmod -R 777 addons
