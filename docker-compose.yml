@@ -1,13 +1,16 @@
 version: '2'
 services:
   db:
+    # platform: linux/x86_64/v8 # enable for silicon
     image: postgres:9.5
     environment:
       - POSTGRES_PASSWORD=odoo
       - POSTGRES_USER=odoo
+    # port: 6543:5432 # to access db from host
     restart: always             # run as a service  
 
   odoo11:
+    # platform: linux/x86_64/v8 # enable for silicon
     image: odoo:11.0
     depends_on:
       - db
